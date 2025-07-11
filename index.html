@@ -4,85 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" >
-    <link rel="icon" href="https://images.vexels.com/content/259667/preview/tennis-racket-and-ball-cut-out-f8064d.png" />
+    <link rel="icon" href="./images/tennis-logo.webp" />
     <title>The US Open is Here</title>
 </head>
-<body>
+<body class="light-theme">
     <div class="webpage">
         <div class="navbar-div" style="margin-bottom: 20px;">
             <nav class="navbar">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#links">Additional Links</a></li>
-                </ul>
+                <div class="navbar-content">
+                    <ul class="navbar-tabs">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#top-players">Top Players</a></li>
+                        <li><a href="#links">Additional Links</a></li>
+                    </ul>
+                    <button class="theme-toggle">Toggle Dark Mode</button>
+                </div>
             </nav>
         </div>
         <div class="page-contents">
             <div class="tennis-player-containter">
-                <img src="https://nypost.com/wp-content/uploads/sites/2/2024/07/2024-taylor-fritz-u-s-84935889.jpg?w=725" alt="Taylor Fritz" title="Taylor Fritz"/>
+                <img src="./images/taylor-fritz.webp" alt="Taylor Fritz" title="Taylor Fritz"/>
             </div>
-            <div class="page-info">
+
+            <div class="page-info light-theme">
                 <header class="page-info-header">
-                    <img src="https://images.vexels.com/content/259667/preview/tennis-racket-and-ball-cut-out-f8064d.png" />
+                    <img src="./images/tennis-logo.webp" />
                     <div class="header-components">
-                        <h1>THE US OPEN SUMMER 2025</h1>
+                        <h1>THE SUMMER 2025 US OPEN</h1>
                         <h3>Where A New Champion Awaits</h3>
                         <button>Get Tickets</button>
                     </div>
                 </header>
-                <h2 id="about">About</h2>
-                <p>The US Open is finally back in New York City! The greatest players from around the world will gather in 
-                    Flushing Meadows - Corona Park to capture the coveted US Open Grand Slam Title. For the die-hard tennis fan, or the casual watcher 
-                    looking for a good time, be sure to attend some matches, and don't miss out on the jam packed action!</p>
-        
-                <h2 id="schedule">Event Schedule</h2>
-                <p>Over the course of two weeks, a lot is bound to happen. Here are some things you should know:</p>
-                <ul>
-                    <li>The two-week tournament starts Sunday, August 24th, 2025 to Sunday, September 7th, 2025</li>
-                    <li>Fan week starts Monday, August 18th, with gates opening at 10:00 AM EST</li>
-                    <ul>
-                        <li>Here you can watch qualifying matches, as well as the Mixed Doubles matches</li>
-                    </ul>
-                    <li>The Women's Championship Match will take place Saturday, September 6th at 3:00 PM EST in Arthur Ashe Stadium</li>
-                    <li>The Men's Championship Match will take place Sunday, September 7th at 3:00 PM EST in Arthur Ashe Stadium</li>
-                </ul>
-            
-                <button>See Men's Top 15 Players</button>
-                <button>See Women's Top 15 Players</button>
 
-                <h2 id="about">About</h2>
-                <p>The US Open is finally back in New York City! The greatest players from around the world will gather in 
-                    Flushing Meadows - Corona Park to capture the coveted US Open Grand Slam Title. For the die-hard tennis fan, or the casual watcher 
-                    looking for a good time, be sure to attend some matches, and don't miss out on the jam packed action!</p>
-        
-                <h2 id="schedule">Event Schedule</h2>
-                <p>Over the course of two weeks, a lot is bound to happen. Here are some things you should know:</p>
-                <ul>
-                    <li>The two-week tournament starts Sunday, August 24th, 2025 to Sunday, September 7th, 2025</li>
-                    <li>Fan week starts Monday, August 18th, with gates opening at 10:00 AM EST</li>
-                    <ul>
-                        <li>Here you can watch qualifying matches, as well as the Mixed Doubles matches</li>
+                <div id="about">
+                    <h2>About</h2>
+                    <p>The US Open is finally back in New York City! The greatest players from around the world will gather in 
+                        Flushing Meadows - Corona Park to capture the coveted US Open Grand Slam Title. For the die-hard tennis fan, or the casual watcher 
+                        looking for a good time, be sure to attend some matches, and don't miss out on the jam packed action!</p>
+                </div>
+
+                <div id="schedule">
+                    <h2>Event Schedule</h2>
+                    <p>Over the course of two weeks, a lot is bound to happen. Here are some things you should know:</p>
+                    <ul class="event-list">
+                        <li>The two-week tournament starts Sunday, August 24th, 2025 to Sunday, September 7th, 2025</li>
+                        <li>Fan week starts Monday, August 18th, with gates opening at 10:00 AM EST</li>
+                        <ul>
+                            <li>Here you can watch qualifying matches, as well as the Mixed Doubles matches</li>
+                        </ul>
+                        <li>The Women's Championship Match will take place Saturday, September 6th at 3:00 PM EST in Arthur Ashe Stadium</li>
+                        <li>The Men's Championship Match will take place Sunday, September 7th at 3:00 PM EST in Arthur Ashe Stadium</li>
                     </ul>
-                    <li>The Women's Championship Match will take place Saturday, September 6th at 3:00 PM EST in Arthur Ashe Stadium</li>
-                    <li>The Men's Championship Match will take place Sunday, September 7th at 3:00 PM EST in Arthur Ashe Stadium</li>
-                </ul>
-            
+                </div>
         
-                
-            
-                <h4 id="links">Additional Links</h4>
-                <a href="usopen.com" >US Open Official Site</a>
+                <div id="top-players">
+                    <button>See Men's Top 15 Players</button>
+                    <button>See Women's Top 15 Players</button>
+                </div>
+  
+                <div id="links">
+                    <h4>Additional Links</h4>
+                    <a href="usopen.com" >US Open Official Site</a>
+                </div>
             
                 <!-- <h4>Players to Look Out For</h4> -->
         
             </div>
             <div class="tennis-player-containter">
-                <img src="https://i.pinimg.com/736x/31/63/20/3163209fdc5d3891f0bd8f384b2ca6c1.jpg" alt="Coco Gauff" title="Coco Gauff"/>
+                <img src="./images/coco-gauff.jpg" alt="Coco Gauff" title="Coco Gauff"/>
                 
             </div>
         </div>
     </div>
-
+    <script src="index.js"></script>
 </body>
 </html>
