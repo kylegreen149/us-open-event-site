@@ -143,15 +143,16 @@ li {
     align-items: center;
     justify-content: flex-start;
     padding: 6px 6px;
+    padding-top: 0px;
     transition: border-bottom 0.3s ease;
 }
 
 .light-theme .page-info-header {
-    border-bottom: #0057e7 3px dotted;
+    border-bottom: #0057e7 8px dotted;
 }
 
 .dark-theme .page-info-header {
-    border-bottom: #539bff 3px dotted;
+    border-bottom: #539bff 8px dotted;
 }
 
 .page-info-header img {
