@@ -31,6 +31,7 @@ const changeTheme = () => {
 themeToggle.addEventListener("click", changeTheme)
 
 // Toggle between Top 15 Mens and Top 15 Womens Players
+// Flags: https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/usa.svg
 
  const mensTop15 = [
     {
@@ -76,7 +77,7 @@ themeToggle.addEventListener("click", changeTheme)
     {
         "first-name": "Novak",
         "last-name": "Djokovic",
-        "country": "SER",
+        "country": "SRB",
         "flag": "🇷🇸",
         "age": 38,
         "rank": 6
@@ -174,7 +175,7 @@ const womensTop15 = [
     },
     {
         "first-name": "Iga",
-        "last-name": "Swiatek",
+        "last-name": "Świątek",
         "country": "POL",
         "flag": "🇵🇱",
         "age": 28,
@@ -278,10 +279,48 @@ const womensTop15 = [
     }
 ]
 
-for (player of mensTop15) {
-    console.log(player["first-name"] + " " + player["last-name"] + " from " + player.country + " is ranked #" + player.rank + " and is " + player.age + " years old.");
+const top15Container = document.querySelector(".top-15");
+
+const mensToggle = () => {
+    top15Container.innerHTML = ""; // Clear existing content
+    mensTop15.forEach(player => {
+        const playerDiv = document.createElement("div");
+        playerDiv.classList.add("player");
+        playerDiv.innerHTML = `
+            <img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag">
+            <h3>${player["first-name"]} ${player["last-name"]}</h3>
+            <p>Rank: ${player.rank}</p>
+            <p>Age: ${player.age}</p>
+        `;
+        top15Container.appendChild(playerDiv);
+    });
 }
-console.log("")
-for (player of womensTop15) {
-    console.log(player["first-name"] + " " + player["last-name"] + " from " + player.country + " is ranked #" + player.rank + " and is " + player.age + " years old.");
+
+const womensToggle = () => {
+    top15Container.innerHTML = ""; // Clear existing content
+    womensTop15.forEach(player => {
+        const playerDiv = document.createElement("div");
+        playerDiv.classList.add("player");
+        playerDiv.innerHTML = `
+            <img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag">
+            <h3>${player["first-name"]} ${player["last-name"]}</h3>
+            <p>Rank: ${player.rank}</p>
+            <p>Age: ${player.age}</p>
+        `;
+        top15Container.appendChild(playerDiv);
+    });
 }
+
+const mensTop15btn = document.querySelector(".mens-top-15-btn");
+mensTop15btn.addEventListener("click", mensToggle);
+
+const womensTop15btn = document.querySelector(".womens-top-15-btn");
+womensTop15btn.addEventListener("click", womensToggle);
+
+// for (player of mensTop15) {
+//     console.log(player["first-name"] + " " + player["last-name"] + " from " + player.country + " is ranked #" + player.rank + " and is " + player.age + " years old.");
+// }
+// console.log("")
+// for (player of womensTop15) {
+//     console.log(player["first-name"] + " " + player["last-name"] + " from " + player.country + " is ranked #" + player.rank + " and is " + player.age + " years old.");
+// }
