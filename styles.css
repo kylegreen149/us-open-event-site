@@ -251,3 +251,28 @@ a:active {
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(3, 1fr);
 }
+
+.headshot {
+    width: 300px;
+    height: 300px;
+    
+    /* margin-right: 10px; */
+}
+
+.player-info p {
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.country {
+    font-size: 0.7rem;
+    /* color: #555; */
+    height: fit-content;
+    font-weight: lighter;
+}
+
+.flag {
+    width: 20px;
+    height: 15px;
+    margin-left: 3px;
+}

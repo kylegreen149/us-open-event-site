@@ -35,6 +35,7 @@ themeToggle.addEventListener("click", changeTheme)
 
  const mensTop15 = [
     {
+        "headshot": "./headshots/sinner-headshot.png",
         "first-name": "Jannik",
         "last-name": "Sinner",
         "country": "ITA",
@@ -43,6 +44,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 1
     },
     {
+        "headshot": "./headshots/alcaraz-headshot.jpg",
         "first-name": "Carlos",
         "last-name": "Alcaraz",
         "country": "ESP",
@@ -51,6 +53,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 2
     },
     {
+        "headshot": "./headshots/zverev-headshot.jpg",
         "first-name": "Alexander",
         "last-name": "Zverev",
         "country": "GER",
@@ -59,6 +62,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 3
     },
     {
+        "headshot": "./headshots/fritz-headshot.png",
         "first-name": "Taylor",
         "last-name": "Fritz",
         "country": "USA",
@@ -67,6 +71,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 4
     },
     {
+        "headshot": "./headshots/draper-headshot.png",
         "first-name": "Jack",
         "last-name": "Draper",
         "country": "GBR",
@@ -75,6 +80,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 5
     },
     {
+        "headshot": "./headshots/djokovic-headshot.png",
         "first-name": "Novak",
         "last-name": "Djokovic",
         "country": "SRB",
@@ -83,6 +89,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 6
     },
     {
+        "headshot": "./headshots/musetti-headshot.png",
         "first-name": "Lorenzo",
         "last-name": "Musetti",
         "country": "ITA",
@@ -90,7 +97,8 @@ themeToggle.addEventListener("click", changeTheme)
         "age": 23,
         "rank": 7
     },
-    {
+    {   
+        "headshot": "./headshots/rune-headshot.png",
         "first-name": "Holger",
         "last-name": "Rune",
         "country": "DEN",
@@ -99,6 +107,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 8
     },
     {
+        "headshot": "./headshots/shelton-headshot.png",
         "first-name": "Ben",
         "last-name": "Shelton",
         "country": "USA",
@@ -107,6 +116,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 9
     },
     {
+        "headshot": "./headshots/rublev-headshot.png",
         "first-name": "Andrey",
         "last-name": "Rublev",
         "country": "RUS",
@@ -115,6 +125,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 10
     },
     {
+        "headshot": "./headshots/tiafoe-headshot.png",
         "first-name": "Frances",
         "last-name": "Tiafoe",
         "country": "USA",
@@ -123,6 +134,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 11
     },
     {
+        "headshot": "./headshots/de-minaur-headshot.jpg",
         "first-name": "Alex",
         "last-name": "de Minaur",
         "country": "AUS",
@@ -131,6 +143,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 12
     },
     {
+        "headshot": "./headshots/rudd-headshot.png",
         "first-name": "Casper",
         "last-name": "Rudd",
         "country": "NOR",
@@ -139,6 +152,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 13
     },
     {
+        "headshot": "./headshots/medvedev-headshot.png",
         "first-name": "Daniil",
         "last-name": "Medvedev",
         "country": "RUS",
@@ -147,6 +161,7 @@ themeToggle.addEventListener("click", changeTheme)
         "rank": 14
     },
     {
+        "headshot": "./headshots/fils-headshot.png",
         "first-name": "Arthur",
         "last-name": "Fils",
         "country": "FRA",
@@ -158,6 +173,7 @@ themeToggle.addEventListener("click", changeTheme)
 
 const womensTop15 = [
     {
+        "headshot": "./headshots/sabalenka-headshot.png",
         "first-name": "Aryna",
         "last-name": "Sabalenka",
         "country": "BLR",
@@ -166,6 +182,7 @@ const womensTop15 = [
         "rank": 1
     },
     {
+        "headshot": "./headshots/gauff-headshot.png",
         "first-name": "Coco",
         "last-name": "Gauff",
         "country": "USA",
@@ -173,7 +190,8 @@ const womensTop15 = [
         "age": 21,
         "rank": 2
     },
-    {
+    {   
+        "headshot": "./headshots/swiatek-headshot.png",
         "first-name": "Iga",
         "last-name": "Świątek",
         "country": "POL",
@@ -181,7 +199,8 @@ const womensTop15 = [
         "age": 28,
         "rank": 3
     },
-    {
+    {   
+        "headshot": "./headshots/pegula-headshot.png",
         "first-name": "Jessica",
         "last-name": "Pegula",
         "country": "USA",
@@ -190,6 +209,7 @@ const womensTop15 = [
         "rank": 4
     },
     {
+        "headshot": "./headshots/andreeva-headshot.png",
         "first-name": "Mirra",
         "last-name": "Andreeva",
         "country": "RUS",
@@ -198,6 +218,7 @@ const womensTop15 = [
         "rank": 5
     },
     {
+        "headshot": "./headshots/zheng-headshot.png",
         "first-name": "Qinweng",
         "last-name": "Zheng",
         "country": "CHN",
@@ -206,6 +227,7 @@ const womensTop15 = [
         "rank": 6
     },
     {
+        "headshot": "./headshots/anisimova-headshot.png",
         "first-name": "Amanda",
         "last-name": "Anisimova",
         "country": "USA",
@@ -214,6 +236,7 @@ const womensTop15 = [
         "rank": 7
     },
     {
+        "headshot": "./headshots/keys-headshot.png",
         "first-name": "Madison",
         "last-name": "Keys",
         "country": "USA",
@@ -222,6 +245,7 @@ const womensTop15 = [
         "rank": 8
     },
     {
+        "headshot": "./headshots/paolini-headshot.png",
         "first-name": "Jasmine",
         "last-name": "Paolini",
         "country": "ITA",
@@ -230,6 +254,7 @@ const womensTop15 = [
         "rank": 9
     },
     {
+        "headshot": "./headshots/badosa-headshot.png",
         "first-name": "Paula",
         "last-name": "Badosa",
         "country": "ESP",
@@ -238,14 +263,16 @@ const womensTop15 = [
         "rank": 10
     },
     {
+        "headshot": "./headshots/navarro-headshot.png",
         "first-name": "Emma",
-        "last-name": "Navaro",
+        "last-name": "Navarro",
         "country": "USA",
         "flag": "🇺🇸",
         "age": 24,
         "rank": 11
     },
     {
+        "headshot": "./headshots/muchova-headshot.jpeg",
         "first-name": "Karolina",
         "last-name": "Muchova",
         "country": "CZE",
@@ -254,6 +281,7 @@ const womensTop15 = [
         "rank": 12
     },
     {
+        "headshot": "./headshots/rybakina-headshot.png",
         "first-name": "Elena",
         "last-name": "Rybakina",
         "country": "KAZ",
@@ -262,6 +290,7 @@ const womensTop15 = [
         "rank": 13
     },
     {
+        "headshot": "./headshots/svitolina-headshot.png",
         "first-name": "Elina",
         "last-name": "Svitolina",
         "country": "UKR",
@@ -270,6 +299,7 @@ const womensTop15 = [
         "rank": 14
     },
     {
+        "headshot": "./headshots/shnaider-headshot.png",
         "first-name": "Diana",
         "last-name": "Shnaider",
         "country": "RUS",
@@ -287,25 +317,29 @@ const mensToggle = () => {
         const playerDiv = document.createElement("div");
         playerDiv.classList.add("player");
         playerDiv.innerHTML = `
-            <img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag">
-            <h3>${player["first-name"]} ${player["last-name"]}</h3>
-            <p>Rank: ${player.rank}</p>
-            <p>Age: ${player.age}</p>
+            <img src="${player.headshot}" alt="${player["first-name"]} ${player["last-name"]} headshot" class="headshot">
+            <div class="player-info">
+                <h3 class="player-name">${player["first-name"]} ${player["last-name"]} <span class="country">(${player.country})</span> <span class="flag"><img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag" class="flag"></span></h3>
+                <p class="player-rank"><b>Rank:</b> ${player.rank}</p>
+                <p class="player-age"><b>Age:</b> ${player.age}</p>
+            </div>
         `;
         top15Container.appendChild(playerDiv);
     });
 }
 
 const womensToggle = () => {
-    top15Container.innerHTML = ""; // Clear existing content
+    top15Container.innerHTML = "";
     womensTop15.forEach(player => {
         const playerDiv = document.createElement("div");
         playerDiv.classList.add("player");
         playerDiv.innerHTML = `
-            <img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag">
-            <h3>${player["first-name"]} ${player["last-name"]}</h3>
-            <p>Rank: ${player.rank}</p>
-            <p>Age: ${player.age}</p>
+            <img src="${player.headshot}" alt="${player["first-name"]} ${player["last-name"]} headshot" class="headshot">
+            <div class="player-info">
+                <h3 class="player-name">${player["first-name"]} ${player["last-name"]} <span class="country">(${player.country})</span> <span class="flag"><img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag" class="flag"></span></h3>
+                <p class="player-rank"><b>Rank:</b> ${player.rank}</p>
+                <p class="player-age"><b>Age:</b> ${player.age}</p>
+            </div>
         `;
         top15Container.appendChild(playerDiv);
     });
