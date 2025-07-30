@@ -321,3 +321,75 @@ mensTop15btn.addEventListener("click", mensToggle);
 const womensTop15btn = document.querySelector(".womens-top-15-btn");
 womensTop15btn.addEventListener("click", womensToggle);
 
+
+// Get Tickets
+const rsvpDiv = document.querySelector(".rsvp-tickets")
+let getTicketsBtn = document.querySelector(".get-tickets-btn")
+
+const ticketToggle = () => {
+    getTicketsBtn.remove()
+
+    // Create form
+    const rsvpForm = document.createElement("form")
+    rsvpForm.setAttribute("class", "rsvp-form")
+
+    // Create form elements
+    const cancelRSVP = document.createElement("button")
+    cancelRSVP.setAttribute("class", "cancel-btn")
+    cancelRSVP.setAttribute("title", "Cancel your RSVP")
+    cancelRSVP.textContent = "X"
+
+
+    const nameLabel = document.createElement("label")
+    nameLabel.textContent = "Name"
+    const nameInput = document.createElement("input")
+    nameInput.setAttribute("id", "name")
+    nameInput.setAttribute("type", "text")
+    nameLabel.appendChild(nameInput)
+
+    const emailLabel = document.createElement("label")
+    emailLabel.textContent = "Email"
+    const emailInput = document.createElement("input")
+    emailInput.setAttribute("id", "email")
+    emailInput.setAttribute("type", "email")
+    emailLabel.appendChild(emailInput)
+
+    const submit = document.createElement("button")
+    submit.textContent = "Submit RSVP"
+
+    rsvpForm.append(cancelRSVP, nameLabel, emailLabel, submit)
+
+    rsvpDiv.appendChild(rsvpForm)
+
+    const cancel = (e) => {
+        e.preventDefault()
+        rsvpForm.remove()
+        cancelRSVP.remove()
+        getTicketsBtn = document.createElement("button")
+        getTicketsBtn.setAttribute("class", "get-tickets-btn")
+        getTicketsBtn.textContent = "Get Tickets"
+
+        rsvpDiv.appendChild(getTicketsBtn)
+        getTicketsBtn.addEventListener("click", ticketToggle)
+    }
+    cancelRSVP.addEventListener("click", cancel)
+
+
+
+    const submitForm = (e) => {
+        e.preventDefault()
+        const seeName = nameInput.value
+        const seeEmail = emailInput.value
+        // console.log(seeName, seeEmail)
+        if (seeName !== "" && seeEmail !== "") {
+            rsvpDiv.innerHTML = `<h5 class="ticket-message"><b>${seeName}</b> just reserved 4 tickets to watch the US Open!</h5>`
+            rsvpForm.remove()
+            cancelRSVP.remove()
+        } else {
+            alert("Enter a valid name and email address to retrieve your tickets")
+        }
+    }
+    rsvpForm.addEventListener("submit", submitForm)
+}
+
+getTicketsBtn.addEventListener("click", ticketToggle)
