@@ -20,10 +20,8 @@ const changeTheme = () => {
 
     if (body.classList.contains("dark-theme")) {
         themeToggle.textContent = "Toggle Light Mode";
-        console.log("DARK MODE!!");
     } else {
         themeToggle.textContent = "Toggle Dark Mode";
-        console.log("LIGHT MODE!!");
     }
     updateImage()
 };
@@ -280,51 +278,86 @@ const womensTop15 = [
 ]
 
 const top15Container = document.querySelector(".top-15");
+const leftBtn = document.getElementById("left-btn");
+leftBtn.classList.add("hidden")
+const rightBtn = document.getElementById("right-btn");
+rightBtn.classList.add("hidden")
+const mensBtn = document.querySelector(".mens-top-15-btn");
+const womensBtn = document.querySelector(".womens-top-15-btn");
 
-const mensToggle = () => {
-    top15Container.innerHTML = ""; // Clear existing content
-    mensTop15.forEach(player => {
-        const playerDiv = document.createElement("div");
-        playerDiv.classList.add("player");
-        playerDiv.innerHTML = `
-            <img src="${player.headshot}" alt="${player["first-name"]} ${player["last-name"]} headshot" class="headshot">
-            <div class="player-info">
-                <h3 class="player-name">${player["first-name"]} ${player["last-name"]} <span class="country">(${player.country})</span> <span class="flag"><img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag" class="flag"></span></h3>
-                <p class="player-rank"><b>Rank:</b> ${player.rank}</p>
-                <p class="player-age"><b>Age:</b> ${player.age}</p>
-            </div>
-        `;
-        top15Container.appendChild(playerDiv);
-    });
-}
+let currentList = null;
+let startIndex = 0;
+const playersPerPage = 3;
 
-const womensToggle = () => {
+function renderPlayers() {
     top15Container.innerHTML = "";
-    womensTop15.forEach(player => {
+
+    leftBtn.classList.remove("hidden")
+    rightBtn.classList.remove("hidden")
+    console.log(leftBtn)
+    if (currentList !== null) {
+        const visiblePlayers = currentList.slice(startIndex, startIndex + playersPerPage);
+
+        visiblePlayers.forEach(player => {
         const playerDiv = document.createElement("div");
         playerDiv.classList.add("player");
         playerDiv.innerHTML = `
             <img src="${player.headshot}" alt="${player["first-name"]} ${player["last-name"]} headshot" class="headshot">
             <div class="player-info">
-                <h3 class="player-name">${player["first-name"]} ${player["last-name"]} <span class="country">(${player.country})</span> <span class="flag"><img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" alt="${player.country} flag" class="flag"></span></h3>
-                <p class="player-rank"><b>Rank:</b> ${player.rank}</p>
-                <p class="player-age"><b>Age:</b> ${player.age}</p>
+            <h3 class="player-name">${player["first-name"]} ${player["last-name"]} 
+                <span class="country">(${player.country})</span> 
+                <span class="flag">
+                <img src="https://www.wtatennis.com/resources/v6.51.5/i/elements/flags/${player.country.toLowerCase()}.svg" 
+                        alt="${player.country} flag" class="flag">
+                </span>
+            </h3>
+            <p class="player-rank"><b>Rank:</b> ${player.rank}</p>
+            <p class="player-age"><b>Age:</b> ${player.age}</p>
             </div>
         `;
         top15Container.appendChild(playerDiv);
-    });
+        });
+    }
+
 }
 
-const mensTop15btn = document.querySelector(".mens-top-15-btn");
-mensTop15btn.addEventListener("click", mensToggle);
+// Navigation buttons
+rightBtn.addEventListener("click", () => {
+    if (startIndex + playersPerPage < currentList.length) {
+    startIndex += playersPerPage;
+    renderPlayers();
+    }
+});
 
-const womensTop15btn = document.querySelector(".womens-top-15-btn");
-womensTop15btn.addEventListener("click", womensToggle);
+leftBtn.addEventListener("click", () => {
+    if (startIndex - playersPerPage >= 0) {
+    startIndex -= playersPerPage;
+    renderPlayers();
+    }
+});
+
+// Toggle between lists
+mensBtn.addEventListener("click", () => {
+    currentList = mensTop15;
+    startIndex = 0;
+    renderPlayers();
+});
+
+womensBtn.addEventListener("click", () => {
+    currentList = womensTop15;
+    startIndex = 0;
+    renderPlayers();
+});
+
+// Initial render
+renderPlayers();
 
 
 // Get Tickets
 const rsvpDiv = document.querySelector(".rsvp-tickets")
 let getTicketsBtn = document.querySelector(".get-tickets-btn")
+
+const gotTickets = []
 
 const ticketToggle = () => {
     getTicketsBtn.remove()
@@ -355,6 +388,7 @@ const ticketToggle = () => {
     emailLabel.appendChild(emailInput)
 
     const submit = document.createElement("button")
+    submit.setAttribute("type", "submit")
     submit.textContent = "Submit RSVP"
 
     rsvpForm.append(cancelRSVP, nameLabel, emailLabel, submit)
@@ -374,17 +408,65 @@ const ticketToggle = () => {
     }
     cancelRSVP.addEventListener("click", cancel)
 
-
-
     const submitForm = (e) => {
         e.preventDefault()
         const seeName = nameInput.value
         const seeEmail = emailInput.value
         // console.log(seeName, seeEmail)
         if (seeName !== "" && seeEmail !== "") {
-            rsvpDiv.innerHTML = `<h5 class="ticket-message"><b>${seeName}</b> just reserved 4 tickets to watch the US Open!</h5>`
+            gotTickets.push(seeName)
+            let allMessages = "";
+            gotTickets.forEach(name => {
+                allMessages += `<h5 class="ticket-message"><b>${name}</b> just reserved 4 tickets to watch the US Open!</h5>`;
+            });
+            rsvpDiv.innerHTML = allMessages;
             rsvpForm.remove()
             cancelRSVP.remove()
+
+            const modalOverlay = document.createElement("div");
+            modalOverlay.setAttribute("class", "modal-overlay");
+            modalOverlay.classList.add("hidden");
+
+            const modalContent = document.createElement("div");
+            modalContent.classList.add("modal-content");
+
+            const modalText = document.createElement("p");
+            modalText.textContent = `Congratulations ${seeName}! Your tickets are getting sent to your email!
+            We hope you have a wonderful time at the 2025 US Open. Your memories await!`;
+            
+            const modalImage = document.createElement("img")
+            modalImage.setAttribute("class", "modal-image")
+            modalImage.setAttribute("src", "./images/tennis-ball-racket.png")
+
+            // Nest elements
+            modalContent.appendChild(modalText);
+            modalContent.appendChild(modalImage);
+            modalOverlay.appendChild(modalContent);
+
+            // Rotate modal image
+            let rotateFactor = 0;
+
+            const intervalId = setInterval(() => {
+            rotateFactor = rotateFactor === 0 ? -10 : 0;
+            modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+            }, 500);
+
+            setTimeout(() => {
+            clearInterval(intervalId);
+            }, 5000);
+
+            // Append to body (or wherever you want it in the DOM)
+            document.body.appendChild(modalOverlay);
+            modalOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                modalOverlay.classList.add('hidden');
+            }, 5000);
+            getTicketsBtn = document.createElement("button")
+            getTicketsBtn.setAttribute("class", "get-tickets-btn")
+            getTicketsBtn.textContent = "Get Tickets"
+
+            rsvpDiv.appendChild(getTicketsBtn)
+            getTicketsBtn.addEventListener("click", ticketToggle)
         } else {
             alert("Enter a valid name and email address to retrieve your tickets")
         }
