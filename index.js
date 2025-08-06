@@ -292,10 +292,9 @@ const playersPerPage = 3;
 function renderPlayers() {
     top15Container.innerHTML = "";
 
-    leftBtn.classList.remove("hidden")
-    rightBtn.classList.remove("hidden")
-    console.log(leftBtn)
     if (currentList !== null) {
+        leftBtn.classList.remove("hidden")
+        rightBtn.classList.remove("hidden")
         const visiblePlayers = currentList.slice(startIndex, startIndex + playersPerPage);
 
         visiblePlayers.forEach(player => {
